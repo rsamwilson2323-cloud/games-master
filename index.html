@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Open Source Games Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <!-- Top Nav -->
+  <header class="topbar">
+    <div class="logo">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">OSGames<span class="logo-accent">Hub</span></span>
+    </div>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search games..." autocomplete="off"/>
+      <span class="search-icon">⌕</span>
+    </div>
+    <div class="topbar-meta">
+      <span id="totalCount" class="badge">0 Games</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">PLATFORM</div>
+        <ul class="filter-list" id="platformFilter">
+          <li class="active" data-filter="all">All Games</li>
+          <li data-filter="browser">🌐 Browser</li>
+          <li data-filter="native">💻 Native</li>
+          <li data-filter="mobile">📱 Mobile</li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">GENRE</div>
+        <ul class="filter-list" id="genreFilter">
+          <li class="active" data-genre="all">All Genres</li>
+          <li data-genre="arcade">🕹️ Arcade</li>
+          <li data-genre="rpg">⚔️ RPG</li>
+          <li data-genre="strategy">🧠 Strategy</li>
+          <li data-genre="puzzle">🧩 Puzzle</li>
+          <li data-genre="fps">🔫 FPS</li>
+          <li data-genre="sandbox">🏗️ Sandbox</li>
+          <li data-genre="racing">🏎️ Racing</li>
+          <li data-genre="boardgame">♟️ Board Game</li>
+          <li data-genre="mmorpg">🌍 MMORPG</li>
+          <li data-genre="platform">🏃 Platform</li>
+          <li data-genre="action">💥 Action</li>
+          <li data-genre="clicker">👆 Clicker</li>
+          <li data-genre="other">🎲 Other</li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">PLAYABLE NOW</div>
+        <ul class="filter-list">
+          <li id="playableToggle" data-playable="false">▷ Has Play Link</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-header">
+        <h1 id="sectionTitle">All Games</h1>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridBtn" title="Grid view">⊞</button>
+          <button class="view-btn" id="listBtn" title="List view">☰</button>
+        </div>
+      </div>
+      <div class="games-grid" id="gamesGrid"></div>
+      <div class="no-results hidden" id="noResults">
+        <div class="no-results-icon">🎮</div>
+        <p>No games found. Try a different search or filter.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Game Modal -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-header">
+        <div class="modal-icon" id="modalIcon"></div>
+        <div>
+          <h2 id="modalTitle"></h2>
+          <div class="modal-tags" id="modalTags"></div>
+        </div>
+      </div>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-actions">
+        <a id="modalGithub" href="#" target="_blank" class="btn btn-github">View on GitHub</a>
+        <a id="modalPlay" href="#" target="_blank" class="btn btn-play hidden">▷ Play Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/games.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
